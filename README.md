@@ -56,6 +56,10 @@ Gets the files in the last commit.
 
 Gets the last modified date of the file passed in.
 
+#### file
+
+Type: `String`
+
 ### `getStagedFiles()`
 
 Gets the files that are currently staged.
