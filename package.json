@@ -1,6 +1,6 @@
 {
     "name": "git-jiggy",
-    "description": "",
+    "description": "A fresh collection of node git utilities.",
     "version": "0.0.0",
     "author": {
         "name": "Michael Novotny",
@@ -13,7 +13,16 @@
         "url": "git+https://github.com/manovotny/git-jiggy.git"
     },
     "keywords": [
-        "git"
+        "add",
+        "amend",
+        "commit",
+        "date",
+        "git",
+        "modified",
+        "node",
+        "staged",
+        "utilities",
+        "utility"
     ],
     "engines": {
         "node": ">=8.6.0",
@@ -36,7 +45,10 @@
             "git add"
         ]
     },
-    "dependencies": {},
+    "dependencies": {
+        "@sindresorhus/is": "0.15.0",
+        "execa": "1.0.0"
+    },
     "devDependencies": {
         "eslint": "4.19.1",
         "eslint-config-get-off-my-lawn-prettier": "1.0.0",
