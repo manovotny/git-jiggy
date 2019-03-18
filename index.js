@@ -26,7 +26,7 @@ module.exports.getStagedFiles = async () => {
     const files = await execa.stdout('git', ['diff', '--name-only', '--cached']);
 
     if (files) {
-        files.split('\n');
+        return files.split('\n');
     }
 
     return [];
