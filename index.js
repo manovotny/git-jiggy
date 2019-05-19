@@ -9,6 +9,8 @@ module.exports.add = (files) => {
 
 module.exports.amendCommit = () => execa('git', ['commit', '--amend', '--no-edit']);
 
+module.exports.getCurrentBranchName = () => execa('git', ['rev-parse', '--abbrev-ref', 'HEAD']);
+
 module.exports.getFilesInLastCommit = async () => {
     const files = await execa.stdout('git', ['diff-tree', '--no-commit-id', '--name-only', '-r', 'HEAD']);
 
