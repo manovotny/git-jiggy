@@ -25,7 +25,7 @@
         "utility"
     ],
     "engines": {
-        "node": ">=8.6.0",
+        "node": ">=22",
         "yarn": ">=1.0.0"
     },
     "main": "index.js",
