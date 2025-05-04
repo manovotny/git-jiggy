@@ -6,16 +6,8 @@
 
 ## Installation
 
-### NPM
-
 ```
 $ npm i git-jiggy
-```
-
-### Yarn
-
-```
-$ yarn add git-jiggy
 ```
 
 ## Usage
@@ -55,6 +47,8 @@ Gets the files in the last commit.
 ### `getLastModifiedDate(file)`
 
 Gets the last modified date of the file passed in.
+
+Returns `undefined` if the file does not exist in the repository.
 
 #### file
 
