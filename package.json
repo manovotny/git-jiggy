@@ -29,14 +29,18 @@
     "node": ">=22.0.0"
   },
   "type": "module",
-  "main": "index.mjs",
+  "main": "dist/index",
+  "types": "dist/index.d.mts",
   "scripts": {
+    "build": "tsc --build",
+    "build:local": "npm run clean && npm run build",
     "check": "npm-check -u",
+    "clean": "tsc --build --clean",
     "lint": "eslint",
     "lint-staged": "lint-staged",
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
-    "test": "npm run lint && npm run prettier:check"
+    "test": "npm run lint && npm run prettier:check && tsc"
   },
   "git": {
     "pre-commit": "lint-staged"
@@ -45,14 +49,14 @@
     "*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "@sindresorhus/is": "7.0.1",
     "execa": "9.5.2"
   },
   "devDependencies": {
     "@vercel/git-hooks": "1.0.0",
     "eslint": "9.26.0",
-    "lint-staged": "15.5.1",
+    "lint-staged": "15.5.2",
     "npm-check": "6.0.1",
-    "prettier": "3.5.3"
+    "prettier": "3.5.3",
+    "typescript": "5.8.3"
   }
 }
