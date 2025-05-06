@@ -4,8 +4,8 @@ import js from "@eslint/js";
 export default defineConfig([
   {
     extends: ["js/recommended"],
-    files: ["index.mjs"],
-    ignores: ["**/.json"],
+    files: ["src/**"],
+    ignores: ["dist"],
     plugins: {
       js,
     },
