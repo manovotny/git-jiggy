@@ -1,7 +1,7 @@
 {
   "name": "git-jiggy",
   "description": "A fresh collection of node git utilities.",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "author": {
     "name": "Michael Novotny",
     "email": "manovotny@gmail.com",
@@ -29,8 +29,14 @@
     "node": ">=22.0.0"
   },
   "type": "module",
-  "main": "dist/index",
+  "main": "dist/index.mjs",
   "types": "dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
   "files": [
     "dist"
   ],
