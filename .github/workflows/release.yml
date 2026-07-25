@@ -5,6 +5,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -14,7 +17,6 @@ jobs:
       - name: Set node version
         uses: actions/setup-node@v4
         with:
-          always-auth: true
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
       - name: Cache node_modules
@@ -31,10 +33,6 @@ jobs:
       - name: Publish version
         if: steps.release.outputs.tag == ''
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish version with tag
         if: steps.release.outputs.tag != ''
         run: npm publish --tag ${{ steps.release.outputs.tag }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
